@@ -10,7 +10,7 @@ from nets.iresnet import (iresnet18, iresnet34, iresnet50, iresnet100,
 from nets.mobilefacenet import get_mbf
 from nets.mobilenet import get_mobilenet
 from nets.mobilevit import mobile_vit_xx_small
-
+from nets.mobilenetv3 import mobilenet_v3_large, mobilenet_v3_small
 class Arcface_Head(Module):
     def __init__(self, embedding_size=128, num_classes=10575, s=64., m=0.5):
         super(Arcface_Head, self).__init__()
@@ -78,6 +78,14 @@ class Arcface(nn.Module):
             embedding_size  = 512
             s               = 64
             self.arcface    = mobile_vit_xx_small(embedding_size=embedding_size)
+        elif backbone=="mobilenetv3_large":
+            embedding_size  = 512
+            s               = 64
+            self.arcface    = mobilenet_v3_large(embedding_size=embedding_size)
+        elif backbone=="mobilenetv3_small":
+            embedding_size  = 512
+            s               = 64
+            self.arcface    = mobilenet_v3_small(embedding_size=embedding_size)
         else:
             raise ValueError('Unsupported backbone - `{}`, Use mobilefacenet, mobilenetv1.'.format(backbone))
 

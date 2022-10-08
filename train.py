@@ -58,13 +58,14 @@ if __name__ == "__main__":
     #   iresnet50
     #   iresnet100
     #   iresnet200
-    #
+    #   mobilevit
+    #   mobilenetv3
     #   除了mobilenetv1外，其它的backbone均可从0开始训练。
     #   这是由于mobilenetv1没有残差边，收敛速度慢，因此建议：
     #   如果使用mobilenetv1为主干,  则设置pretrain = True
     #   如果使用其它网络为主干，    则设置pretrain = False
     #--------------------------------------------------------#
-    backbone        = "mobilevit"
+    backbone        = "mobilenetv3_small"
     #----------------------------------------------------------------------------------------------------------------------------#
     #   如果训练过程中存在中断训练的操作，可以将model_path设置成logs文件夹下的权值文件，将已经训练了一部分的权值再次载入。
     #   同时修改下方的训练的参数，来保证模型epoch的连续性。
