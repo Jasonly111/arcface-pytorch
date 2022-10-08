@@ -116,4 +116,4 @@ img\1_002.jpg
 https://github.com/deepinsight/insightface  
 https://github.com/timesler/facenet-pytorch   
 
-# arcface-pytorch
+# arcface
